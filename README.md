@@ -1,7 +1,7 @@
 ip_intelligence
 ======================
 
-A Python library for the IP Intelligence API
+A Python library for the Neustar IP Intelligence API
 
 Dependencies
 =============
