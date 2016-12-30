@@ -15,14 +15,6 @@ import requests, json
 from hashlib import md5
 from time import time
 
-# Make sure authentication errors are presented readably.
-class AuthError(Exception):
-	def __init__(self, message):
-		self.message = message
-
-	def __str__(self):
-		return repr(self.message)
-
 class Connection:
 	def __init__(self, api_key, secret, service=None):
 		self.endpoint = 'https://api.sec.neustar.biz/ipi/'
@@ -61,7 +53,7 @@ class Connection:
 		# For debugging
 		# print req.url
 		if req.status_code is not requests.codes.OK:
-			return req.status_code
+			raise Exception('Auth error', req.status_code)
 		elif self._is_json(req.text):
 			return req.json()
 		else:

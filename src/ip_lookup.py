@@ -11,15 +11,51 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import json
 
 class IPLookup:
 	def __init__(self, connection, ip):
 		self.connection = connection
-		self.ip = ip
-		self.results = None
+		self.ip = self.connection.get(ip)
 
-	def raw_data(self):
-		"""This will return all of the IP data in raw JSON format."""
-		return self.connection.get(self.ip)
+	# IP Data
+	def ip_info(self):
+		"""Return all IP info as an object"""
+		return self.ip['ipinfo']
 
+	def anonymizer_status(self):
+		"""Returns anonymizer status"""
+		return self.ip['ipinfo']['anonymizer_status']
+
+	def ip_type(self):
+		"""Returns IP type which should be mapped or private"""
+		return self.ip['ipinfo']['ip_type']
+
+	def ip_address(self):
+		"""Returns the IP address"""
+		return self.ip['ipinfo']['ip_address']
+
+	# Proxy Data
+	def proxy_data(self):
+		"""Return all proxy data as an object"""
+		return self.ip['ipinfo']['ProxyData']
+
+	def proxy_level(self):
+		"""Returns proxy level"""
+		return self.ip['ipinfo']['ProxyData']['proxy_level']
+
+	def proxy_type(self):
+		"""Returns proxy type"""
+		return self.ip['ipinfo']['ProxyData']['proxy_type']
+
+	def proxy_last_detected(self):
+		"""Return proxy type"""
+		return self.ip['ipinfo']['ProxyData']['proxy_last_detected']
+
+	# Location
+	def location(self):
+		"""Return all location data as an object"""
+		return self.ip['ipinfo']['Location']
+
+	# Country Data
+	# def country_data(self):
+	# 	"""Return all country data as an object"""
