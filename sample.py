@@ -14,16 +14,16 @@
 import ip_intelligence, sys
 
 # The fifth argument is True if you are using a GeoPoint Premium
-# license.
+# license. Otherwise leave blank for Standard.
 if len(sys.argv) != 4 and len(sys.argv) !=5:
-    raise Exception("Expected use: python sample.py api_key secret ip [True/False]")
+    raise Exception("Expected use: python sample.py api_key secret ip [True]")
 
 api_key = sys.argv[1]
 secret = sys.argv[2]
 ip = sys.argv[3]
 gpp = False
 
-if len(sys.argv) == 5 and sys.argv[4] is True:
+if len(sys.argv) == 5:
 	gpp = True
 
 # If the client raises a KeyError and states that the field is not
