@@ -67,4 +67,4 @@ print 'state %s' % state_data.state()
 # City Data
 city_data = location.city_data()
 print 'city %s' % city_data.city()
-print 'postal code %s' city_data.postal_code()
+print 'postal code %s' % city_data.postal_code()
