@@ -13,28 +13,20 @@
 # limitations under the License.
 from .check_json import CheckJSON
 
-class StateData:
+class Domain:
 	def __init__(self, location):
-		self.state_data = CheckJSON('StateData', location).key_valid()
+		self.domain = CheckJSON('Domain', location).key_valid()
 
 	# Full Response
 	def info(self):
-		"""Return all state data as an object"""
-		return self.state_data
+		"""Return all domain data as an object"""
+		return self.domain
 
 	# Individual Fields
-	def state_cf(self):
-		"""Returns state confidence factor"""
-		return CheckJSON('state_cf', self.state_data).key_valid()
+	def sld(self):
+		"""Returns second level domain"""
+		return CheckJSON('sld', self.domain).key_valid()
 
-	def state(self):
-		"""Returns state"""
-		return CheckJSON('state', self.state_data).key_valid()
-
-	def state_code(self):
-		"""Returns state code"""
-		return CheckJSON('state_code', self.state_data).key_valid()
-
-	def state_ref_id(self):
-		"""Returns state reference ID"""
-		return CheckJSON('state_ref_id', self.state_data).key_valid()
+	def tld(self):
+		"""Returns top level domain"""
+		return CheckJSON('tld', self.domain).key_valid()

@@ -13,28 +13,28 @@
 # limitations under the License.
 from .check_json import CheckJSON
 
-class StateData:
+class OrganizationData:
 	def __init__(self, location):
-		self.state_data = CheckJSON('StateData', location).key_valid()
+		self.organization_data = CheckJSON('OrganizationData', location).key_valid()
 
 	# Full Response
 	def info(self):
-		"""Return all state data as an object"""
-		return self.state_data
+		"""Return all organization data as an object"""
+		return self.organization_data
 
 	# Individual Fields
-	def state_cf(self):
-		"""Returns state confidence factor"""
-		return CheckJSON('state_cf', self.state_data).key_valid()
+	def home(self):
+		"""Returns home field"""
+		return CheckJSON('home', self.organization_data).key_valid()
 
-	def state(self):
-		"""Returns state"""
-		return CheckJSON('state', self.state_data).key_valid()
+	def naics_code(self):
+		"""Returns NAICS code"""
+		return CheckJSON('naics_code', self.organization_data).key_valid()
 
-	def state_code(self):
-		"""Returns state code"""
-		return CheckJSON('state_code', self.state_data).key_valid()
+	def isic_code(self):
+		"""Returns ISIC code"""
+		return CheckJSON('isic_code', self.organization_data).key_valid()
 
-	def state_ref_id(self):
-		"""Returns state reference ID"""
-		return CheckJSON('state_ref_id', self.state_data).key_valid()
+	def organization_type(self):
+		"""Returns organization type"""
+		return CheckJSON('organization_type', self.organization_data).key_valid()

@@ -14,6 +14,7 @@
 from .check_json import CheckJSON
 from .proxy_data import ProxyData
 from .location import Location
+from .network import Network
 
 
 class IPLookup:
@@ -31,6 +32,11 @@ class IPLookup:
 	def proxy_data(self):
 		"""Creates a proxy data object containing proxy info"""
 		return ProxyData(self.ip_info)
+
+	# Network
+	def network(self):
+		"""Creates a network object containing network info"""
+		return Network(self.ip_info)
 
 	# Location
 	def location(self):

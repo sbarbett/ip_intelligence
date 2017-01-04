@@ -47,7 +47,11 @@ class Location:
 
 	def region(self):
 		"""Returns region"""
-		return CheckJSON('dma', self.location).key_valid()
+		return CheckJSON('region', self.location).key_valid()
+
+	def geonames_id(self):
+		"""Returns GeoNames ID"""
+		return CheckJSON('geonames_id', self.location).key_valid()
 
 	def longitude(self):
 		"""Returns longitude"""

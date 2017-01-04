@@ -35,6 +35,10 @@ class CityData:
 		"""Returns city confidence factor"""
 		return CheckJSON('city_cf', self.city_data).key_valid()
 
+	def city_ref_id(self):
+		"""Returns city reference ID"""
+		return CheckJSON('city_ref_id', self.city_data).key_valid()
+
 	def postal_code(self):
 		"""Returns postal code"""
 		return CheckJSON('postal_code', self.city_data).key_valid()
