@@ -22,7 +22,7 @@ setup(
     author_email='shane@barbetta.me',
     license='Apache License, Version 2.0',
     keywords='ip_intelligence',
-    packages=['ip_intelligence'],
+    packages=['src'],
     install_requires=['requests'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
