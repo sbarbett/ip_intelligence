@@ -3,9 +3,18 @@ ip_intelligence
 
 A Python library for the Neustar IP Intelligence API. See sample.py for example usage.
 
-You will need a valid IP Intelligence API key in order to use the service. See https://ipintelligence.neustar.biz for more information.
+You will need a valid IP Intelligence API key in order to use the service. See [IP Intelligence's homepage](https://ipintelligence.neustar.biz) or [Neustar's website](https://www.neustar.biz/risk/compliance-solutions/ip-intelligence) for further information.
 
 For a full glossary of the different data fields available, go [here](https://ipintelligence.neustar.biz/portal/#documentation).
+
+Installation
+=============
+
+This client and its dependencies are manageable through pip.
+
+```
+pip install ip_intelligence
+```
 
 Dependencies
 =============
