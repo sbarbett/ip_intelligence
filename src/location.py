@@ -12,15 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from .check_json import CheckJSON
+from .country_data import CountryData
+from .state_data import StateData
+from .city_data import CityData
 
 class Location:
 	def __init__(self, ip_info):
 		self.location = CheckJSON('Location', ip_info).key_valid()
 
+	# Full Response
 	def info(self):
 		"""Returns all location info as an object"""
 		return self.location
 
+	# Country
+	def country_data(self):
+		"""Creates a country data object containing country info"""
+		return CountryData(self.location)
+
+	# State
+	def state_data(self):
+		"""Creates a state data object containing state info"""
+		return StateData(self.location)
+
+	# City
+	def city_data(self):
+		"""Creates a city data object containing city info"""
+		return CityData(self.location)
+
+	# Individual Fields
 	def dma(self):
 		"""Returns DMA"""
 		return CheckJSON('dma', self.location).key_valid()
@@ -28,3 +48,19 @@ class Location:
 	def region(self):
 		"""Returns region"""
 		return CheckJSON('dma', self.location).key_valid()
+
+	def longitude(self):
+		"""Returns longitude"""
+		return CheckJSON('longitude', self.location).key_valid()
+
+	def msa(self):
+		"""Returns MSA"""
+		return CheckJSON('msa', self.location).key_valid()
+
+	def latitude(self):
+		"""Returns latitude"""
+		return CheckJSON('latitude', self.location).key_valid()
+
+	def continent(self):
+		"""Returns continent"""
+		return CheckJSON('continent', self.location).key_valid()
