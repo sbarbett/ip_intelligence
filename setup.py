@@ -15,14 +15,15 @@ from setuptools import setup
 
 setup(
     name='ip_intelligence',
-    version='1.0',
+    version='1.1',
     description='A Python library for the Neustar IP Intelligence API',
     url='https://github.com/sbarbett/ip_intelligence',
     author='Shane Barbetta',
     author_email='shane@barbetta.me',
     license='Apache License, Version 2.0',
     keywords='ip_intelligence',
-    packages=['src'],
+    packages=['ip_intelligence'],
+    package_dir={'ip_intelligence': 'src'},
     install_requires=['requests'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
