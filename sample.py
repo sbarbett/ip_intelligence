@@ -13,19 +13,25 @@
 # limitations under the License.
 import ip_intelligence, sys
 
-if len(sys.argv) != 4:
-    raise Exception("Expected use: python sample.py api_key secret ip")
+# The fifth argument is True if you are using a GeoPoint Premium
+# license.
+if len(sys.argv) != 4 and len(sys.argv) !=5:
+    raise Exception("Expected use: python sample.py api_key secret ip [True/False]")
 
 api_key = sys.argv[1]
 secret = sys.argv[2]
 ip = sys.argv[3]
+gpp = False
+
+if len(sys.argv) == 5 and sys.argv[4] is True:
+	gpp = True
 
 # If the client raises a KeyError and states that the field is not
 # available, your access is not licensed for that information.
 # Contact your sales representative for further info.
 
 # General IP Info
-connection = ip_intelligence.Client(api_key, secret)
+connection = ip_intelligence.Client(api_key, secret, gpp)
 ip_info = connection.ip_lookup(ip)
 print 'ip address %s' % ip_info.ip_address()
 print 'ip type %s' % ip_info.ip_type()
