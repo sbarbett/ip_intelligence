@@ -28,7 +28,7 @@ if len(sys.argv) == 5:
 
 # If the client raises a KeyError and states that the field is not
 # available, your access is not licensed for that information.
-# Contact your sales representative for further info.
+# Contact Neustar for further info.
 
 # General IP Info
 connection = ip_intelligence.Client(api_key, secret, gpp)
